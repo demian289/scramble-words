@@ -1,5 +1,3 @@
-Please navigate to the root difrectory of the project to run the followings:
-
 ## Solution
 
 See original [google code competition](https://codingcompetitions.withgoogle.com/kickstart/round/0000000000050edf/0000000000051004) for the details of the challenge.
@@ -17,22 +15,33 @@ I'm not aware of any non-functional requirements. Let me know if this solution i
 ## Usage
 
 Documentation of the CLI interface is available via the following command:
+`cd src`
 `python scrambled-strings.py --help`
 
 ```{bash}
-usage: scrambled-strings.py [-h] [--dictionary DICT] [--input INPUT]
+usage: scrambled-strings.py [-h] --dictionary DICT --input INPUT
+                            [--loglevel [{NOTSET,DEBUG,INFO,WARNING,ERROR,CRITICAL}]]
 
 Count scrambled occurrences of dictionary items for each input line.
 
 optional arguments:
-  -h, --help         show this help message and exit
-  --dictionary DICT  path of dictionary file
-  --input INPUT      path of input file
-```
+  -h, --help            show this help message and exit
+  --dictionary DICT     path of dictionary file
+  --input INPUT         path of input file
+  --loglevel [{NOTSET,DEBUG,INFO,WARNING,ERROR,CRITICAL}]
+                        log level. DEBUG displays dictionary and matches
+
+EXAMPLE (before build):
+  python scrambled-strings.py --dictionary ../data/dict.txt --input ../data/input.txt --loglevel DEBUG
+EXAMPLE (after build):
+         scrambled-strings    --dictionary ../data/dict.txt --input ../data/input.txt --loglevel DEBUG```
 
 ## Test
 
-`python test`
+You can run the tests as follows:
+
+`cd src`
+`python test.py`
 
 ## Build
 
@@ -43,7 +52,6 @@ The following command runs on both Win and Unix distributions.
 ```{bash}
 pyinstaller --distpath ./dist scrambled-strings.py --onefile
 ```
-
 ## Docker
 I used [docker-pyinstaller](https://github.com/cdrx/docker-pyinstaller) to implement this feature. Docker files cover many python versions and register sizes:
 
