@@ -70,7 +70,7 @@ py3-win32  | 32             | FROM ubuntu:16.04
 
 Since Windows Server 2016 comes packaged with a base image of the Ubuntu OS, ubuntu images can run over Windows too.
 
-### create new image from modified docker file
+### Create new image from modified docker file
 
 I focus only on the py3-amd64 version.
 
@@ -80,13 +80,13 @@ Build docker image from dockerfile:
 Run image
 `docker run [IMG_NAME]`
 
-### use remote docker image to build project
+### Use remote docker image to build project
 
 Generate .`.spec` file:
 `docker run -v "$(pwd):/src/" cdrx/pyinstaller-linux "pyinstaller scrambled-strings.py"`
 
 Build project into `dist` folder using `.spec` file
-docker run -v "$(pwd):/src/" cdrx/pyinstaller-linux
+`docker run -v "$(pwd):/src/" cdrx/pyinstaller-linux`
 
 ## Notes
 
