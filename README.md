@@ -16,6 +16,7 @@ I'm not aware of any non-functional requirements. Let me know if this solution i
 
 Documentation of the CLI interface is available via the following command:
 `cd src`
+
 `python scrambled-strings.py --help`
 
 ```{bash}
@@ -34,13 +35,15 @@ optional arguments:
 EXAMPLE (before build):
   python scrambled-strings.py --dictionary ../data/dict.txt --input ../data/input.txt --loglevel DEBUG
 EXAMPLE (after build):
-         scrambled-strings    --dictionary ../data/dict.txt --input ../data/input.txt --loglevel DEBUG```
+         scrambled-strings    --dictionary ../data/dict.txt --input ../data/input.txt --loglevel DEBUG
+```
 
 ## Test
 
 You can run the tests as follows:
 
 `cd src`
+
 `python test.py`
 
 ## Build
